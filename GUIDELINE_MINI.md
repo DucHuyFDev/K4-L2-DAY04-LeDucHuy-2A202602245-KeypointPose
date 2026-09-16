@@ -1,6 +1,7 @@
-# Mini guideline - nhóm: ______  |  người gán: ______  |  ngày: ______
+# Mini guideline - nhóm: ______  |  người gán: Lê Đức Huy  |  ngày: 16/9/2026
 
 > Báo cáo kết quả tương ứng: `reports/REPORT.md`.
+
 # Guideline Gán Nhãn Pose
 
 ## 1. Phạm vi
@@ -13,24 +14,24 @@
 
 ## 2. Quy tắc visibility
 
-| Tình huống | Gán | Cách đặt điểm |
-| --- | --- | --- |
-| Nhìn thấy rõ keypoint | `v=2` | Đặt đúng tâm giải phẫu nhìn thấy |
+| Tình huống                                                          | Gán    | Cách đặt điểm                                              |
+| --------------------------------------------------------------------- | ------- | --------------------------------------------------------------- |
+| Nhìn thấy rõ keypoint                                              | `v=2` | Đặt đúng tâm giải phẫu nhìn thấy                       |
 | Bị vật/người/trang phục che nhưng vị trí còn nằm trong ảnh | `v=1` | Ước lượng vị trí dựa trên các đoạn xương liền kề |
-| Keypoint nằm ngoài mép ảnh, không thể quan sát trong khung | `v=0` | Đặt tọa độ `0 0` |
+| Keypoint nằm ngoài mép ảnh, không thể quan sát trong khung     | `v=0` | Đặt tọa độ`0 0`                                          |
 
 Không dùng `v=0` chỉ vì keypoint khó nhìn. Nếu phần cơ thể còn trong khung và có thể suy ra vị trí, phải dùng `v=1`.
 
 ## 3. Luật cụ thể của nhóm
 
-| Tình huống | Luật áp dụng | Bằng chứng cần dùng |
-| --- | --- | --- |
-| Hông dưới quần áo dài | Gán `v=1` nếu hông bị vải che nhưng còn trong box; đặt theo trục vai-gối và hình dáng thân | Vị trí vai, eo, đầu gối và hướng thân |
-| Tai bị tóc hoặc mũ che | Gán `v=1` nếu vùng tai còn trong ảnh và có thể suy ra từ mắt/mặt; chỉ `v=0` khi tai ra ngoài mép ảnh | Vị trí mắt, đường mặt và mép ảnh |
-| Người bị cắt ở mép ảnh | Các điểm đã ra ngoài ảnh dùng `v=0` và `0 0`; điểm còn trong ảnh vẫn phải gán `v=1` hoặc `v=2` | Mép ảnh và phần xương liền kề |
-| Cổ tay sau tay lái hoặc thân người | Gán `v=1`, đặt theo hướng cẳng tay-bàn tay và khớp khuỷu | Trục khuỷu-cổ tay và vật che |
-| Hai người chồng lên nhau | Giữ skeleton theo từng người; không lấy keypoint của người bên cạnh | Box, vai-hông và chuỗi xương của chính người đó |
-| Người quá nhỏ | Vẫn gán nếu nhận diện được người và box; dùng `v=1` cho điểm bị che, không tự ý bỏ skeleton | Box người và các keypoint còn nhìn thấy |
+| Tình huống                             | Luật áp dụng                                                                                                        | Bằng chứng cần dùng                                    |
+| ---------------------------------------- | ---------------------------------------------------------------------------------------------------------------------- | ---------------------------------------------------------- |
+| Hông dưới quần áo dài              | Gán`v=1` nếu hông bị vải che nhưng còn trong box; đặt theo trục vai-gối và hình dáng thân             | Vị trí vai, eo, đầu gối và hướng thân             |
+| Tai bị tóc hoặc mũ che               | Gán`v=1` nếu vùng tai còn trong ảnh và có thể suy ra từ mắt/mặt; chỉ `v=0` khi tai ra ngoài mép ảnh | Vị trí mắt, đường mặt và mép ảnh                 |
+| Người bị cắt ở mép ảnh            | Các điểm đã ra ngoài ảnh dùng`v=0` và `0 0`; điểm còn trong ảnh vẫn phải gán `v=1` hoặc `v=2` | Mép ảnh và phần xương liền kề                      |
+| Cổ tay sau tay lái hoặc thân người | Gán`v=1`, đặt theo hướng cẳng tay-bàn tay và khớp khuỷu                                                    | Trục khuỷu-cổ tay và vật che                          |
+| Hai người chồng lên nhau             | Giữ skeleton theo từng người; không lấy keypoint của người bên cạnh                                         | Box, vai-hông và chuỗi xương của chính người đó |
+| Người quá nhỏ                        | Vẫn gán nếu nhận diện được người và box; dùng`v=1` cho điểm bị che, không tự ý bỏ skeleton        | Box người và các keypoint còn nhìn thấy             |
 
 ## 4. Các ca mơ hồ đã gặp
 
