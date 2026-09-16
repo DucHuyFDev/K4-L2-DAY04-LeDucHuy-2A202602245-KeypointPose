@@ -4,16 +4,16 @@
     "matched_people": 29,
     "missing_people": 0,
     "extra_people": 0,
-    "mean_oks": 0.8568,
+    "mean_oks": 0.8572,
     "oks50": 0.931,
     "oks75": 0.8966,
     "findings": {
       "gold_khong_gan_nhan": 74,
-      "co_khac_gold": 56,
-      "lech_nhe": 35,
+      "co_khac_gold": 57,
+      "lech_nhe": 36,
       "dao_trai_phai": 3,
-      "truot_han": 2,
-      "nham_nguoi": 2
+      "nham_nguoi": 2,
+      "truot_han": 1
     }
   },
   "per_image": [
@@ -92,7 +92,7 @@
         {
           "gold_person": 1,
           "your_person": 1,
-          "oks": 0.8647,
+          "oks": 0.8754,
           "findings": [
             {
               "type": "gold_khong_gan_nhan",
@@ -113,16 +113,22 @@
               "detail": "Không bị trừ điểm: khớp gold có v=0 bị loại khỏi OKS. Xem mục lưu ý trong README."
             },
             {
-              "type": "truot_han",
-              "label": "Trượt hẳn",
+              "type": "lech_nhe",
+              "label": "Lệch nhẹ",
               "keypoint": "left_ear",
-              "detail": "Lệch 34 px = 3.2 lần bán kính dung sai của khớp này."
+              "detail": "Lệch 27 px = 2.5 lần bán kính dung sai. Sửa được, ít hại."
             },
             {
               "type": "gold_khong_gan_nhan",
               "label": "Gold không gán khớp này",
               "keypoint": "right_ear",
               "detail": "Không bị trừ điểm: khớp gold có v=0 bị loại khỏi OKS. Xem mục lưu ý trong README."
+            },
+            {
+              "type": "co_khac_gold",
+              "label": "Cờ khác gold",
+              "keypoint": "right_hip",
+              "detail": "Vị trí đúng nhưng bạn ghi v=1, gold ghi v=2. Không trừ điểm OKS - nhưng nếu lệch hàng loạt thì guideline chưa thống nhất."
             },
             {
               "type": "co_khac_gold",
@@ -690,7 +696,7 @@
       "matches": [
         {
           "gold_person": 1,
-          "your_person": 2,
+          "your_person": 3,
           "oks": 0.6964,
           "findings": [
             {
@@ -804,7 +810,7 @@
         },
         {
           "gold_person": 2,
-          "your_person": 3,
+          "your_person": 2,
           "oks": 0.8587,
           "findings": [
             {
